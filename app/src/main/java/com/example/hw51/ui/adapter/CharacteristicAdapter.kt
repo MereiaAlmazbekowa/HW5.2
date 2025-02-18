@@ -14,7 +14,7 @@ import com.example.hw51.databinding.ItemCharacteristicBinding
 class CharacteristicAdapter(private val onClick: OnClickItem) :
     ListAdapter<Character, CharacteristicAdapter.ViewHolder>(diffUtil) {
 
-    inner class ViewHolder(val binding: ItemCharacteristicBinding) :
+    inner class ViewHolder(private val binding: ItemCharacteristicBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(character: Character) = with(binding) {
             tvName.text = character.name
