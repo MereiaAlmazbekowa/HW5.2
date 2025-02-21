@@ -1,36 +1,34 @@
 package com.example.hw51.ui.fragment
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.hw51.data.api.ApiService
 import com.example.hw51.data.model.Character
+import com.example.hw51.data.repository.CartoonRepository
+import com.example.hw51.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class CharacterViewModel : ViewModel() {
+@HiltViewModel
+class CharacterViewModel @Inject constructor(
+    private val repository: CartoonRepository
+) : ViewModel() {
 
-    private val _characters = MutableLiveData<List<Character>>()
-    val characters: LiveData<List<Character>> get() = _characters
+    private val _characters = MutableLiveData<Resource<List<Character>>>()
+    val characters: LiveData<Resource<List<Character>>> get() = _characters
 
-    private val apiService = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(ApiService::class.java)
+    init {
+        fetchCharacters()
+    }
 
-    fun getCharacters() {
-        viewModelScope.launch {
-            try {
-                _characters.value = apiService.getCharacters().characters
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+    private fun fetchCharacters() {
+        repository.getAllCharacters().observeForever { characters ->
+            _characters.postValue(characters)
         }
     }
 }

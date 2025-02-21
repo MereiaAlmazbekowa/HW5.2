@@ -1,22 +1,25 @@
 [versions]
-agp = "8.8.0"
+agp = "8.8.1"
 androidxNavigationFragmentKtx = "2.8.7"
-coil = "2.2.2"
-converterGson = "2.9.0"
+coil = "2.5.0"
+converterGson = "2.10.0"
+glide = "4.12.0"
+kapt = "com.github.bumptech.glide"
+hiltAndroid = "2.51.1"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
-lifecycleViewmodelKtx = "2.8.1"
+lifecycleViewmodelKtx = "2.8.7"
 material = "1.12.0"
 activity = "1.10.0"
 constraintlayout = "2.2.0"
 navigationFragmentKtx = "2.7.6"
 navigationUiKtx = "2.8.6"
 recyclerview = "1.4.0"
-retrofit = "2.9.0"
+retrofit = "2.11.0"
 navigationFragmentKtxVersion = "2.8.6"
 
 [libraries]
@@ -28,6 +31,9 @@ androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 junit = { module = "junit:junit", version.ref = "junit" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }

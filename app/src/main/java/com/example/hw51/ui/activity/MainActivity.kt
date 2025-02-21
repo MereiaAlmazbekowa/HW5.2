@@ -1,12 +1,15 @@
 package com.example.hw51.ui.activity
 
 import android.os.Bundle
+import androidx.annotation.AnyRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.hw51.R
 import com.example.hw51.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private val binding by lazy {

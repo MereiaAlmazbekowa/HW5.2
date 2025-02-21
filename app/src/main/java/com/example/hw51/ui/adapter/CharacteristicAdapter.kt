@@ -6,12 +6,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.hw51.interfaces.OnClickItem
 import com.example.hw51.R
 import com.example.hw51.data.model.Character
 import com.example.hw51.databinding.ItemCharacteristicBinding
 
-class CharacteristicAdapter(private val onClick: OnClickItem) :
+class CharacteristicAdapter(private val onClick: (Character) -> Unit) :
     ListAdapter<Character, CharacteristicAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(private val binding: ItemCharacteristicBinding) :
@@ -31,6 +30,9 @@ class CharacteristicAdapter(private val onClick: OnClickItem) :
                     else -> R.drawable.ic_cicrle_gray
                 }
             )
+            root.setOnClickListener {
+                onClick(character)
+            }
         }
     }
 
@@ -42,9 +44,6 @@ class CharacteristicAdapter(private val onClick: OnClickItem) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(getItem(position))
-        holder.itemView.setOnClickListener {
-            onClick.onClick(getItem(position))
-        }
     }
 }
 

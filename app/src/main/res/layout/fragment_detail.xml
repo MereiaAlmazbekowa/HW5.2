@@ -57,7 +57,7 @@
                         android:paddingStart="10dp">
 
                         <TextView
-                            android:id="@+id/name"
+                            android:id="@+id/tv_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Rick Sanchez"
@@ -66,7 +66,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/status"
+                            android:id="@+id/tv_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Alive - Human"
@@ -78,12 +78,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
-                            android:text="opop"
+                            android:text="Gender"
                             android:textColor="@color/white2"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/gender"
+                            android:id="@+id/tv_gender"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Male"
@@ -95,12 +95,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="opop"
+                            android:text="Location"
                             android:textColor="@color/white2"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/last_location"
+                            android:id="@+id/tv_last_location"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Citadel of Ricks"
@@ -112,12 +112,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="opop"
+                            android:text="First seen in"
                             android:textColor="@color/white2"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/first_Seen_In"
+                            android:id="@+id/tv_first_Seen_In"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pilot"
