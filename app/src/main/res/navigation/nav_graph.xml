@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.example.hw51.ui.fragment.CharacterFragment"
+        android:name="com.example.hw51.ui.fragment.character.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.hw51.ui.fragment.DetailFragment"
+        android:name="com.example.hw51.ui.fragment.detail.DetailFragment"
         android:label="DetailFragment" >
         <argument
             android:name="id"

@@ -1,4 +1,4 @@
-package com.example.hw51.ui.fragment
+package com.example.hw51.ui.fragment.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

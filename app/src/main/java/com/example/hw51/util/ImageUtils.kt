@@ -1,4 +1,4 @@
-package com.example.hw51.ui.fragment
+package com.example.hw51.util
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
