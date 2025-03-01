@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hw51.ui.adapter.CharacteristicAdapter
@@ -15,6 +16,7 @@ import com.example.hw51.data.model.Character
 import com.example.hw51.databinding.FragmentCharacterBinding
 import com.example.hw51.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -45,19 +47,9 @@ class CharacterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
 
-        viewModel.characters.observe(viewLifecycleOwner) { characters ->
-            when (characters) {
-                is Resource.Error -> {
-                    showToast(characters.message)
-//                    showProgressBar(false)
-                }
-
-                is Resource.Loading -> {}
-
-                is Resource.Success -> {
-//                    showProgressBar(false)
-                    cartoonAdapter.submitList(characters.data)
-                }
+        viewModel.getCharactersPaging().observe(viewLifecycleOwner) { dataPaging ->
+            lifecycleScope.launch {
+                cartoonAdapter.submitData(dataPaging)
             }
         }
     }
@@ -65,14 +57,6 @@ class CharacterFragment : Fragment() {
     private fun setupRecyclerView() = with(binding.recyclerView) {
         layoutManager = LinearLayoutManager(context)
         adapter = cartoonAdapter
-    }
-
-//    private fun showProgressBar(isVisible: Boolean) = with(binding) {
-//        if (isVisible) progressBar.visible() else progressBar.gone()
-//    }
-
-    private fun showToast(message: String?) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     private fun onClicked(character: Character) {

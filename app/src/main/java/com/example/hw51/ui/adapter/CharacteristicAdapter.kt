@@ -2,6 +2,7 @@ package com.example.hw51.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import com.example.hw51.data.model.Character
 import com.example.hw51.databinding.ItemCharacteristicBinding
 
 class CharacteristicAdapter(private val onClick: (Character) -> Unit) :
-    ListAdapter<Character, CharacteristicAdapter.ViewHolder>(diffUtil) {
+    PagingDataAdapter<Character, CharacteristicAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(private val binding: ItemCharacteristicBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -43,7 +44,7 @@ class CharacteristicAdapter(private val onClick: (Character) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+        holder.onBind(getItem(position)!!)
     }
 }
 

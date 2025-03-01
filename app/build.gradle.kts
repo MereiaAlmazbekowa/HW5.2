@@ -56,17 +56,21 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.coil)
-
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation (libs.glide)
+    implementation (libs.androidx.room.ktx)
+    implementation (libs.androidx.room.runtime)
+    kapt (libs.androidx.room.compiler)
 
     val lifecycle_version = "2.8.1"
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
     //Logging interceptor
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation(libs.logging.interceptor)
+
+    implementation(libs.androidx.paging.runtime.ktx)
 }

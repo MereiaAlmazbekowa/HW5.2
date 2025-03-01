@@ -13,14 +13,17 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 lifecycleViewmodelKtx = "2.8.7"
+loggingInterceptor = "4.12.0"
 material = "1.12.0"
 activity = "1.10.0"
 constraintlayout = "2.2.0"
 navigationFragmentKtx = "2.7.6"
 navigationUiKtx = "2.8.6"
+pagingRuntimeKtx = "3.3.6"
 recyclerview = "1.4.0"
 retrofit = "2.11.0"
 navigationFragmentKtxVersion = "2.8.6"
+roomKtx = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -28,7 +31,11 @@ androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-lived
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidxNavigationFragmentKtx" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidxNavigationFragmentKtx" }
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -38,6 +45,7 @@ junit = { module = "junit:junit", version.ref = "junit" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }

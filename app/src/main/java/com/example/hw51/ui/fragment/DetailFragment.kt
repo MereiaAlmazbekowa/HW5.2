@@ -1,4 +1,4 @@
-package com.example.hw51
+package com.example.hw51.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.hw51.R
 import com.example.hw51.data.model.Character
 import com.example.hw51.databinding.FragmentDetailBinding
-import com.example.hw51.ui.fragment.DetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

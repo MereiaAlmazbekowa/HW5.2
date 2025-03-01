@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.hw51.DetailFragment"
+        android:name="com.example.hw51.ui.fragment.DetailFragment"
         android:label="DetailFragment" >
         <argument
             android:name="id"
